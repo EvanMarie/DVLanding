@@ -1,0 +1,347 @@
+:root {
+  /* Light Blue Colors */
+  --light-blue: #ebeff7;
+  --light-blue-25: rgba(235, 239, 247, 0.25);
+  --light-blue-40: rgba(235, 239, 247, 0.4);
+  --light-blue-50: rgba(235, 239, 247, 0.5);
+  --light-blue-75: rgba(235, 239, 247, 0.75);
+
+  /* Medium Blue Colors */
+  --medium-blue: #b3c3f5;
+  --medium-blue-25: rgba(179, 195, 245, 0.25);
+  --medium-blue-50: rgba(179, 195, 245, 0.5);
+  --medium-blue-75: rgba(179, 195, 245, 0.75);
+
+  /* Deep Blue Colors */
+  --deep-blue: #7795f2;
+  --deep-blue-25: rgba(119, 149, 242, 0.25);
+  --deep-blue-50: rgba(119, 149, 242, 0.5);
+  --deep-blue-75: rgba(119, 149, 242, 0.75);
+
+  /* Cyan Colors */
+  --cyan: #309ec9;
+  --cyan-25: rgba(48, 158, 201, 0.25);
+  --cyan-50: rgba(48, 158, 201, 0.5);
+  --cyan-75: rgba(48, 158, 201, 0.75);
+  --cyan-90: rgba(48, 158, 201, 0.9);
+
+  /* Lavender Colors */
+  --lavender: rgba(129, 108, 212, 1);
+  --lavender-25: rgba(129, 108, 212, 0.25);
+  --lavender-50: rgba(129, 108, 212, 0.5);
+  --lavender-75: rgba(129, 108, 212, 0.75);
+
+  /* Purple Colors */
+  --purple: #9400d3;
+  --purple-15: rgba(148, 0, 211, 0.15);
+  --purple-25: rgba(148, 0, 211, 0.25);
+  --purple-40: rgba(148, 0, 211, 0.4);
+  --purple-50: rgba(148, 0, 211, 0.5);
+  --purple-75: rgba(148, 0, 211, 0.75);
+  --purple-85: rgba(148, 0, 211, 0.85);
+
+  /* Slate Colors */
+  --slate: #3d3859;
+  --slate-25: rgba(61, 56, 89, 0.25);
+  --slate-50: rgba(61, 56, 89, 0.5);
+  --slate-75: rgba(61, 56, 89, 0.75);
+
+  /* Dark Gray Colors */
+  --dark-gray: #27293d;
+  --dark-gray-25: rgba(39, 41, 61, 0.25);
+  --dark-gray-50: rgba(39, 41, 61, 0.5);
+  --dark-gray-75: rgba(39, 41, 61, 0.75);
+  --dark-gray-90: rgba(39, 41, 61, 0.9);
+
+  /* Charcoal Colors */
+  --charcoal: #1d1e2b;
+  --charcoal-25: rgba(29, 30, 43, 0.25);
+  --charcoal-50: rgba(29, 30, 43, 0.5);
+  --charcoal-75: rgba(29, 30, 43, 0.75);
+  --charcoal-82: rgba(29, 30, 43, 0.82);
+  --charcoal-86: rgba(29, 30, 43, 0.86);
+  --charcoal-90: rgba(29, 30, 43, 0.9);
+
+  --lilac: #f190ff;
+  --pinkest: #ff5aff;
+
+  /* Gradient Backgrounds */
+
+  /* Gradients */
+  --dark-violet-grad: linear-gradient(
+    to top,
+    rgba(148, 0, 211, 0.15),
+    rgba(148, 0, 211, 0.25),
+    rgba(148, 0, 211, 0.4),
+    rgba(148, 0, 211, 0.5)
+  );
+  --dark-gray-grad: linear-gradient(
+    to bottom,
+    rgba(29, 30, 43, 0.75),
+    rgba(29, 30, 43, 0.82),
+    rgba(29, 30, 43, 0.9),
+    #1d1e2b
+  );
+  --light-blue-grad: linear-gradient(
+    to bottom,
+    rgba(119, 149, 242, 0.75),
+    rgba(119, 149, 242, 0.5),
+    #7795f2
+  );
+  --medium-gray-grad: linear-gradient(
+    to bottom,
+    rgba(29, 30, 43, 0.25),
+    rgba(39, 41, 61, 0.5),
+    rgba(39, 41, 61, 0.75),
+    #27293d
+  );
+  --light-gray-grad: linear-gradient(
+    to bottom,
+    rgba(61, 56, 89, 0.25),
+    rgba(61, 56, 89, 0.5),
+    rgba(61, 56, 89, 0.75),
+    #3d3859
+  );
+  --extra-dark-gray-grad: linear-gradient(
+    to bottom,
+    rgba(29, 30, 43, 0.75),
+    rgba(29, 30, 43, 0.82),
+    rgba(29, 30, 43, 0.9)
+  );
+  --light-purple-grad: linear-gradient(
+    to bottom,
+    rgba(129, 108, 212, 0.25),
+    rgba(129, 108, 212, 0.5),
+    rgba(129, 108, 212, 0.75),
+    rgba(129, 108, 212, 1)
+  );
+  --cyan-grad: linear-gradient(
+    to bottom,
+    rgba(48, 158, 201, 0.4),
+    rgba(119, 149, 242, 0.5),
+    rgba(119, 149, 242, 0.4),
+    rgba(119, 149, 242, 0.5),
+    rgba(48, 158, 201, 0.4)
+  );
+
+  /* Sizes */
+  --xs: 1vh;
+  --sm: 1.5vh;
+  --md: 2vh;
+  --lg: 2.5vh;
+  --xl: 3vh;
+  --xxl: 3.5vh;
+  --xxxl: 4vh;
+
+  --DVShadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  --SubtleShadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+    rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+    rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+    rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  --StandoutShadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  --DVTextShadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+  --Shadow3D: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--md);
+  background-color: var(--dark-gray);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: "smooth";
+  scrollbar-width: "thin";
+  scrollbar-color: "purple";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  color: var(--light-blue);
+  background-color: var(--dark-gray);
+  background-image: url("./resources/violetBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+  color: var(--lilac);
+}
+
+a:hover {
+  color: var(--cyan);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav,
+footer {
+  position: fixed;
+  height: 12vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--slate-75);
+  z-index: 100;
+  box-shadow: var(--Shadow3D);
+}
+
+footer {
+  bottom: 0;
+  top: auto;
+  height: 8vh;
+  align-items: space-between;
+}
+
+.logo {
+  height: 6vh;
+  margin-bottom: var(--sm);
+}
+
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav li,
+footer li {
+  line-height: var(--lg);
+  display: inline-block;
+  font-size: var(--lg);
+  font-weight: 500;
+  text-shadow: var(--DVTextShadow);
+}
+
+footer li {
+  font-size: 1rem;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 13vh;
+  padding-bottom: 11vh;
+}
+
+.contents {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--cyan-grad);
+  border-radius: var(--xs);
+  position: relative;
+  box-shadow: var(--DVShadow);
+}
+
+.image {
+  position: absolute;
+}
+
+.bottom-right {
+  bottom: 0px;
+  right: 10px;
+}
+
+.bottom-left {
+  bottom: 0px;
+  left: 10px;
+}
+
+.top-right {
+  top: 40px;
+  right: 10px;
+}
+
+.top-left {
+  top: 40px;
+  left: 10px;
+}
+
+.medium-image {
+  width: 50vw;
+  max-width: 400px;
+}
+
+@media (min-width: 800px) {
+  .logo {
+    margin: 0;
+  }
+
+  nav,
+  footer {
+    flex-direction: row;
+  }
+
+  nav {
+    justify-content: space-around;
+    height: 8vh;
+  }
+
+  nav li {
+    font-size: var(--xl);
+  }
+
+  ul {
+    width: 50vw;
+  }
+
+  footer {
+    height: 4vh;
+  }
+
+  .page {
+    padding-top: 8vh;
+    padding-bottom: 4vh;
+  }
+
+  .contents {
+    height: 85vh;
+  }
+
+  .medium-image {
+    width: 40vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contents {
+    max-width: 85vw;
+  }
+  .medium-image {
+    width: 30vw;
+  }
+}
