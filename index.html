@@ -12,16 +12,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Additional styles or scripts can be added here -->
+    <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+
 </head>
 
 <body class="snapScroll">
 
     <header>
         <nav>
-
-            <a href="#home"><img src="./resources/darkVioletPickName.png" class="logo"></a>
-
+            <div class="logo">
+                <img src="./resources/tinyviolet.png" class="tiny-violet" style="top: 1.5vh; right: -1.5vh;" />
+                <img src="./resources/tinyviolet.png" class="tiny-violet" style="top: 1.5vh; left: -1.5vh;" />
+                <img src="./resources/tinyviolet.png" class="tiny-violet" style="bottom: 1.5vh; right: -2vh;" />
+                <img src="./resources/tinyviolet.png" class="tiny-violet" style="bottom: 1.5vh; left: -1.5vh;" />
+                <a href="#home">
+                    <p class="title">DarkViolet.ai</p>
+                </a>
+            </div>
             <ul>
                 <li><a href="#who">Who?</a></li>
                 <li><a href="#what">What?</a></li>
@@ -116,7 +123,7 @@
 
                     </div>
                     <div class="bio-text">
-                        Dustin W. Carr, Ph.D., is a proficient engineer and inventor channeling his extensive
+                        Dustin W. Carr, Ph.D., is a highly qualified engineer and inventor channeling his extensive
                         technical expertise in the
                         realm of artificial intelligence. Owning a portfolio of over 25 issued patents across
                         diverse
@@ -135,13 +142,13 @@
     </div>
 
     <div class="page" id="what">
-        <div class="contents">What?</div>
+        <div class="contents light-purple-grad">What?</div>
     </div>
     <div class="page" id="why">
-        <div class="contents">Why</div>
+        <div class="contents light-pink-grad">Why</div>
     </div>
     <div class="page" id="when">
-        <div class="contents">When</div>
+        <div class="contents cyan-grad">When</div>
     </div>
     <footer>
         <p>&copy; 2023 DarkViolet.ai. All rights reserved.</p>
@@ -156,6 +163,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const navLinks = document.querySelectorAll('nav li a');
+            const titleLink = document.querySelector('a[href="#home"] .title'); // Select the DarkViolet.ai link
             const sections = document.querySelectorAll('.page');
 
             function updateActiveLink() {
@@ -167,6 +175,13 @@
                         link.classList.remove('active');
                     }
                 });
+
+                // Logic for DarkViolet.ai link
+                if (hash === "#home") {
+                    titleLink.classList.add('active');
+                } else {
+                    titleLink.classList.remove('active');
+                }
             }
 
             const observer = new IntersectionObserver((entries) => {
@@ -188,8 +203,7 @@
 
             updateActiveLink();
             window.addEventListener('hashchange', updateActiveLink);
-        });
-
+        }); 
     </script>
 </body>
 
