@@ -236,7 +236,9 @@ a {
 }
 
 a:hover {
-  color: var(--cyan);
+  color: var(--pinkest);
+  text-shadow: 0px 0px 3px black;
+  transition: all 0.3s ease-in-out;
 }
 
 header {
@@ -244,6 +246,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+nav img {
 }
 
 nav,
@@ -297,6 +302,8 @@ footer li {
 nav ul li a.active {
   color: var(--cyan);
   text-shadow: var(--BigTextShadow);
+  font-size: var(--xxl);
+  transition: all 0.3s ease-in-out;
 }
 
 .page {
@@ -431,7 +438,7 @@ nav ul li a.active {
 }
 
 .bio-header {
-  font-size: var(--xl);
+  font-size: var(--lg);
   font-weight: 500;
   color: var(--cyan);
   text-shadow: var(--DVTextShadow);
@@ -509,6 +516,12 @@ nav ul li a.active {
   margin-left: var(--xs);
 }
 
+hr.rounded {
+  border-top: 1px solid var(--cyan-90);
+  border-radius: 5px;
+  width: 90vw;
+}
+
 /* ------------------------------- 600px  ----------------------------- */
 
 @media (min-width: 600px) {
@@ -524,6 +537,18 @@ nav ul li a.active {
 
   .bio-detail {
     flex-direction: row;
+  }
+
+  .learn-more {
+    font-size: var(--md);
+  }
+
+  .icon {
+    height: 2.3vh;
+  }
+
+  .bio-header {
+    font-size: var(--xl);
   }
 }
 
@@ -548,6 +573,10 @@ nav ul li a.active {
     font-size: var(--xl);
   }
 
+  nav ul li a.active {
+    font-size: var(--xxxl);
+  }
+
   ul {
     width: 50vw;
   }
@@ -567,6 +596,8 @@ nav ul li a.active {
 
   .page-header {
     max-width: 85vw;
+
+    font-size: var(--xxxl);
   }
 
   .expand-right {
@@ -635,7 +666,7 @@ nav ul li a.active {
 
 @media (min-width: 1024px) {
   .contents {
-    max-width: 85vw;
+    max-width: 90vw;
   }
 
   .page-header {
@@ -675,11 +706,19 @@ nav ul li a.active {
   .collapsing-stack {
     width: 75vw;
   }
+
+  hr.rounded {
+    width: 85vw;
+  }
 }
 
 /* ---------------------------------- 1300px ------------------------------- */
 
 @media (min-width: 1300px) {
+  .contents {
+    max-width: 85vw;
+  }
+
   .text-section {
     max-width: 80vw;
     padding-top: var(--xxxl);
@@ -710,5 +749,21 @@ nav ul li a.active {
     font-size: var(--lg);
     line-height: var(--xl);
     width: 50vw;
+  }
+
+  hr.rounded {
+    width: 80vw;
+  }
+
+  .page-header {
+    font-size: var(--xxxl);
+  }
+
+  .bio-header {
+    font-size: var(--xxl);
+  }
+
+  .bio-detail {
+    font-size: var(--lg);
   }
 }
