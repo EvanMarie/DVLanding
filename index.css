@@ -19,7 +19,7 @@
   --deep-blue-75: rgba(119, 149, 242, 0.75);
 
   /* Cyan Colors */
-  --cyan: #309ec9;
+  --cyan: #00ffff;
   --cyan-25: rgba(48, 158, 201, 0.25);
   --cyan-50: rgba(48, 158, 201, 0.5);
   --cyan-75: rgba(48, 158, 201, 0.75);
@@ -125,6 +125,7 @@
   );
 
   /* Sizes */
+  --xxs: 0.5vh;
   --xs: 1vh;
   --sm: 1.5vh;
   --md: 2vh;
@@ -140,12 +141,63 @@
     rgba(0, 0, 0, 0.07) 0px 32px 64px;
   --StandoutShadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   --DVTextShadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+  --BigTextShadow: 2px 3px 5px rgba(0, 0, 0, 0.9);
   --Shadow3D: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  --TextShadowCyan: 0px 2px 15px rgba(0, 0, 0, 0.9);
 }
+
+/* ------------------------------- gradient backgrounds  ----------------------------- */
+
+.dark-violet-grad {
+  background: var(--dark-violet-grad);
+}
+
+.dark-gray-grad {
+  background: var(--dark-gray-grad);
+}
+
+.light-blue-grad {
+  background: var(--light-blue-grad);
+}
+
+.medium-gray-grad {
+  background: var(--medium-gray-grad);
+}
+
+.light-gray-grad {
+  background: var(--light-gray-grad);
+}
+
+.extra-dark-gray-grad {
+  background: var(--extra-dark-gray-grad);
+}
+
+.light-purple-grad {
+  background: var(--light-purple-grad);
+}
+
+.cyan-grad {
+  background: var(--cyan-grad);
+}
+
+/* -------------------------------  snap-scroll ----------------------------- */
+
+.snapScroll {
+  height: 100vh;
+  scroll-snap-type: y var(--tw-scroll-snap-strictness);
+  --tw-scroll-snap-strictness: mandatory;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0ms;
+}
+
+/* -------------------------------  CSS DEFAULTS ----------------------------- */
 
 * {
   box-sizing: border-box;
@@ -242,16 +294,22 @@ footer li {
   font-size: 1rem;
 }
 
+nav ul li a.active {
+  color: var(--cyan);
+  text-shadow: var(--BigTextShadow);
+}
+
 .page {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   position: relative;
   padding-top: 13vh;
   padding-bottom: 7vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .contents {
@@ -261,8 +319,7 @@ footer li {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: var(--cyan-grad);
-  border-radius: var(--xs);
+  border-radius: var(--xxs);
   position: relative;
   box-shadow: var(--DVShadow);
   padding: var(--md) var(--lg);
@@ -273,28 +330,61 @@ footer li {
 }
 
 .bottom-right {
-  bottom: 0px;
-  right: 10px;
+  bottom: 0vh;
+  right: 3vw;
 }
 
 .bottom-left {
-  bottom: 0px;
-  left: 10px;
+  bottom: 0vh;
+  left: 3vw;
 }
 
 .top-right {
-  top: 40px;
-  right: 10px;
+  top: 3vh;
+  right: 2vw;
 }
 
 .top-left {
-  top: 40px;
-  left: 10px;
+  top: 16vh;
+  left: 8vw;
+}
+
+.top-center {
+  top: 4vh;
+  left: 50%;
+}
+
+.bottom-center {
+  bottom: 0px;
+  left: 40%;
+}
+
+.small-image {
+  width: 166vw;
 }
 
 .medium-image {
-  width: 50vw;
-  max-width: 275px;
+  width: 33vw;
+}
+
+.large-image {
+  width: 40vw;
+}
+
+.medium-show {
+  display: none;
+}
+
+.large-show {
+  display: none;
+}
+
+.xl-show {
+  display: none;
+}
+
+.medium-show {
+  display: none;
 }
 
 .inner-container {
@@ -313,13 +403,12 @@ footer li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: var(--xxxl);
+  font-size: var(--xxl);
   align-self: flex-start;
   justify-self: flex-start;
   font-weight: 500;
-  max-width: 600px;
-  color: var(--deep-blue);
-  text-shadow: var(--DVTextShadow);
+  color: var(--medium-blue);
+  text-shadow: var(--TextShadowCyan);
 }
 
 .text-section {
@@ -329,9 +418,116 @@ footer li {
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: var(--md);
-  font-size: var(--lg);
-  max-width: 600px;
+  font-size: var(--md);
+  line-height: var(--lg);
 }
+
+.collapsing-stack {
+  display: flex;
+  width: 90vw;
+  flex-direction: row;
+  margin: var(--xl) 0;
+  align-items: flex-start;
+}
+
+.bio-header {
+  font-size: var(--xl);
+  font-weight: 500;
+  color: var(--cyan);
+  text-shadow: var(--DVTextShadow);
+}
+
+.detail-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.bio-detail {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--md);
+  line-height: var(--lg);
+  color: var(--medium-blue);
+  text-shadow: var(--DVTextShadow);
+  margin-top: var(--xs);
+}
+
+.VStack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.team-image {
+  height: 30vh;
+  border-radius: var(--xxs);
+  box-shadow: var(--DVShadow);
+  margin: 0 var(--md);
+  width: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.team-image:hover {
+  transform: scale(1.04);
+  box-shadow: var(--Shadow3D);
+  transition: all 0.3s ease-in-out;
+}
+
+.bio-text {
+  display: none;
+}
+
+.learn-more {
+  font-size: var(--sm);
+  width: auto;
+  height: 4vh;
+  line-height: var(--md);
+  padding: var(--xs) var(--sm);
+  background: var(--dark-gray);
+  border-radius: var(--xxs);
+  margin-top: var(--xs);
+  box-shadow: var(--DVShadow);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.learn-more:hover {
+  background: var(--slate);
+  color: var(--cyan);
+  transition: all 0.3s ease-in-out;
+}
+
+.icon {
+  height: 2vh;
+  margin-left: var(--xs);
+}
+
+/* ------------------------------- 600px  ----------------------------- */
+
+@media (min-width: 600px) {
+  .large-image {
+    width: 30vw;
+  }
+
+  .text-section {
+    font-size: var(--lg);
+    line-height: var(--xl);
+    padding-top: var(--lg);
+  }
+
+  .bio-detail {
+    flex-direction: row;
+  }
+}
+
+/* ------------------------------- 800px  ----------------------------- */
 
 @media (min-width: 800px) {
   .logo {
@@ -369,16 +565,150 @@ footer li {
     height: 85vh;
   }
 
+  .page-header {
+    max-width: 85vw;
+  }
+
+  .expand-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+  }
+
+  .expand-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  .small-image {
+    width: 16vw;
+  }
+
   .medium-image {
-    width: 40vw;
+    width: 28vw;
+  }
+
+  .large-image {
+    width: 30vw;
+  }
+
+  .medium-show {
+    display: flex;
+  }
+
+  .bottom-left {
+    left: 5vw;
+  }
+
+  .text-section {
+    padding-top: var(--xl);
+    line-height: var(--xxxl);
+    width: 57vw;
+  }
+
+  .medium-show {
+    display: flex;
+  }
+
+  .team-image {
+    height: 33vh;
+    width: auto;
+  }
+
+  .bio-text {
+    margin-top: var(--md);
+    display: flex;
+    line-height: var(--lg);
+  }
+
+  .bio-detail {
+    font-size: var(--lg);
   }
 }
+
+/* ---------------------------------- 1024px ------------------------------- */
 
 @media (min-width: 1024px) {
   .contents {
     max-width: 85vw;
   }
+
+  .page-header {
+    font-size: var(--xxxl);
+    max-width: 70vw;
+  }
+
+  .small-image {
+    width: 13vw;
+  }
+
   .medium-image {
-    width: 30vw;
+    width: 23vw;
+  }
+
+  .large-image {
+    width: 25vw;
+  }
+
+  .large-show {
+    display: flex;
+  }
+
+  .bottom-left {
+  }
+
+  .top-left {
+    top: 13vh;
+    left: 8vw;
+  }
+
+  .text-section {
+    padding-top: var(--xxl);
+    width: 50vw;
+  }
+
+  .collapsing-stack {
+    width: 75vw;
+  }
+}
+
+/* ---------------------------------- 1300px ------------------------------- */
+
+@media (min-width: 1300px) {
+  .text-section {
+    max-width: 80vw;
+    padding-top: var(--xxxl);
+    width: 40vw;
+  }
+
+  .top-left {
+    top: 15vh;
+    left: 8vw;
+  }
+
+  .small-image {
+    width: 9vw;
+  }
+  .medium-image {
+    width: 18vw;
+  }
+
+  .large-image {
+    width: 20vw;
+  }
+
+  .xl-show {
+    display: flex;
+  }
+
+  .bio-text {
+    font-size: var(--lg);
+    line-height: var(--xl);
+    width: 50vw;
   }
 }
