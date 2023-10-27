@@ -205,7 +205,7 @@
                     style="width: 39vw; left: 17vh">
                 <img src="./resources/violetsrowTwo.png" class="image bottom-center small-show small-image"
                     style=" left: 2vh; max-width: 8vw">
-                <div class="page-header" style="align-self: flex-start;">Why Dark Violet?</div>
+                <div class="page-header" style="align-self: center;">Why Dark Violet?</div>
 
                 <div class="card-container" style="margin-top: 2vh;">
                     <div class="card align-left">
@@ -229,63 +229,73 @@
         </div>
     </div>
     <div class="page" id="when">
-        <div class="contents cyan-grad">When</div>
-    </div>
-    <footer>
-        <p>&copy; 2023 DarkViolet.ai. All rights reserved.</p>
+        <div class="contents cyan-grad">
+            <div class="inner-container" style="max-width: 80vw;">
 
-        <ul>
-            <li><a href="/terms">Terms of Service</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-        </ul>
-    </footer>
+                <img src="./resources/violetsrow.png" class="image bottom-right medium-show" style="width: 500px">
+                <img src="./resources/darkVioletAccent03.png" class="image bottom-left small-show large-image">
+                <div class="page-header" style="align-self: center;">When will she be here?</div>
+                <div class="text-section">Our team is working hard, day and night, to bring Dark Violet to you! Stay
+                    tuned,
+                    and join our discord to kickstart the Dark Violet community.</div>
+            </div>
+
+        </div>
+        <footer>
+            <p>&copy; 2023 DarkViolet.ai. All rights reserved.</p>
+
+            <ul>
+                <li><a href="/terms">Terms of Service</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+            </ul>
+        </footer>
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navLinks = document.querySelectorAll('nav li a');
-            const titleLink = document.querySelector('a[href="#home"] .title'); // Select the DarkViolet.ai link
-            const sections = document.querySelectorAll('.page');
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const navLinks = document.querySelectorAll('nav li a');
+                const titleLink = document.querySelector('a[href="#home"] .title'); // Select the DarkViolet.ai link
+                const sections = document.querySelectorAll('.page');
 
-            function updateActiveLink() {
-                const hash = window.location.hash;
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href') === hash) {
-                        link.classList.add('active');
+                function updateActiveLink() {
+                    const hash = window.location.hash;
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === hash) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    });
+
+                    // Logic for DarkViolet.ai link
+                    if (hash === "#home") {
+                        titleLink.classList.add('active');
                     } else {
-                        link.classList.remove('active');
+                        titleLink.classList.remove('active');
                     }
-                });
-
-                // Logic for DarkViolet.ai link
-                if (hash === "#home") {
-                    titleLink.classList.add('active');
-                } else {
-                    titleLink.classList.remove('active');
                 }
-            }
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        window.history.pushState(null, null, `#${id}`);
-                        updateActiveLink();
-                    }
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            window.history.pushState(null, null, `#${id}`);
+                            updateActiveLink();
+                        }
+                    });
+                }, {
+                    rootMargin: '-50% 0px -50% 0px',
+                    threshold: 0
                 });
-            }, {
-                rootMargin: '-50% 0px -50% 0px',
-                threshold: 0
-            });
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
 
-            updateActiveLink();
-            window.addEventListener('hashchange', updateActiveLink);
-        }); 
-    </script>
+                updateActiveLink();
+                window.addEventListener('hashchange', updateActiveLink);
+            }); 
+        </script>
 </body>
 
 </html>
