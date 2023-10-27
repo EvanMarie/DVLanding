@@ -261,9 +261,6 @@ header {
   align-items: center;
 }
 
-nav img {
-}
-
 nav,
 footer {
   position: fixed;
@@ -293,15 +290,38 @@ footer {
 }
 
 .tiny-violet {
-  width: 2vh;
+  width: 2.5vh;
   position: absolute;
+  transform: rotate(90deg);
 }
 
 .title {
   font-family: "Annie Use Your Telescope", cursive;
   font-size: 5vh;
   font-weight: 600;
-  text-shadow: 0px 0px 10px black;
+  color: transparent;
+  background: linear-gradient(
+    45deg,
+    var(--cyan),
+    var(--medium-blue),
+    var(--pinkest)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.title:hover {
+  /* Bright gradient colors on hover */
+  background: linear-gradient(
+    45deg,
+    var(--cyan),
+    var(--medium-blue),
+    var(--pinkest)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Lightened text-shadow on hover */
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 ul {
@@ -347,6 +367,7 @@ nav .title.active {
   padding-bottom: 7vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  overflow-x: hidden;
 }
 
 .contents {
@@ -373,7 +394,7 @@ nav .title.active {
 
 .bottom-left {
   bottom: 0vh;
-  left: 3vw;
+  left: 1vw;
 }
 
 .top-right {
@@ -382,7 +403,7 @@ nav .title.active {
 }
 
 .top-left {
-  top: 16vh;
+  top: 15vh;
   left: 8vw;
 }
 
@@ -397,7 +418,7 @@ nav .title.active {
 }
 
 .small-image {
-  width: 166vw;
+  width: 16vw;
 }
 
 .medium-image {
@@ -405,7 +426,7 @@ nav .title.active {
 }
 
 .large-image {
-  width: 40vw;
+  width: 35vw;
 }
 
 .medium-show {
@@ -427,7 +448,6 @@ nav .title.active {
 .inner-container {
   width: 100%;
   height: 100%;
-  max-width: 900px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -440,12 +460,14 @@ nav .title.active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: var(--xxl);
+  font-size: 4.5vh;
+  line-height: 4.5vh;
   align-self: flex-start;
   justify-self: flex-start;
   font-weight: 500;
   color: var(--medium-blue);
-  text-shadow: var(--TextShadowCyan);
+  font-family: "Annie Use Your Telescope", cursive;
+  text-shadow: 0px 5px 4px #000000;
 }
 
 .text-section {
@@ -454,9 +476,21 @@ nav .title.active {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: var(--md);
+  padding-top: var(--sm);
   font-size: var(--md);
   line-height: var(--lg);
+}
+
+.flower-box {
+  width: 100%;
+  display: flex;
+  direction: row;
+  justify-content: center;
+}
+
+.flower-section {
+  width: 150px;
+  margin-top: var(--md);
 }
 
 .collapsing-stack {
@@ -481,6 +515,10 @@ nav .title.active {
   align-items: flex-start;
 }
 
+.spacer {
+  display: none;
+}
+
 .bio-detail {
   display: flex;
   flex-direction: column;
@@ -499,7 +537,7 @@ nav .title.active {
 }
 
 .team-image {
-  height: 30vh;
+  height: 28vh;
   border-radius: var(--xxs);
   box-shadow: var(--DVShadow);
   margin: 0 var(--md);
@@ -552,11 +590,55 @@ hr.rounded {
   width: 90vw;
 }
 
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--xs);
+  padding: var(--sm);
+}
+
+.card {
+  width: 90vw;
+  border-radius: var(--xxs);
+  box-shadow: var(--DVShadow);
+  background: var(--dark-gray-grad);
+  padding: var(--xs);
+}
+
+.card-heading {
+  color: var(--cyan);
+  font-size: var(--md);
+  margin-bottom: var(--xs);
+}
+
+.card-text {
+  font-size: var(--sm);
+  line-height: var(--md);
+  color: var(--medium-blue);
+}
+
+.align-left {
+  align-self: center;
+}
+
+.align-center {
+  align-self: center;
+}
+
+.align-right {
+  align-self: center;
+}
+
 /* ------------------------------- 600px  ----------------------------- */
 
 @media (min-width: 600px) {
   .large-image {
-    width: 30vw;
+    width: 23vw;
+  }
+
+  .bottom-right {
+    right: 5vw;
   }
 
   .text-section {
@@ -579,6 +661,39 @@ hr.rounded {
 
   .bio-header {
     font-size: var(--xl);
+  }
+
+  .card {
+    width: 70vw;
+  }
+
+  .bottom-left {
+    left: 3vw;
+  }
+
+  .card-heading {
+    font-size: var(--lg);
+  }
+
+  .card-text {
+    font-size: var(--md);
+    line-height: var(--lg);
+  }
+
+  .card-narrow {
+    width: 50vw;
+  }
+
+  .card-narrow {
+    align-self: flex-end;
+  }
+
+  .flower-box {
+    padding-top: var(--lg);
+  }
+
+  .flower-section {
+    width: 200px;
   }
 }
 
@@ -626,8 +741,7 @@ hr.rounded {
 
   .page-header {
     max-width: 85vw;
-
-    font-size: var(--xxxl);
+    font-size: 5.5vh;
   }
 
   .expand-right {
@@ -663,12 +777,12 @@ hr.rounded {
   }
 
   .bottom-left {
-    left: 5vw;
+    left: 1vw;
   }
 
   .text-section {
-    padding-top: var(--xl);
-    line-height: var(--xxxl);
+    padding-top: var(--lg);
+    line-height: var(--xl);
     width: 57vw;
   }
 
@@ -685,10 +799,31 @@ hr.rounded {
     margin-top: var(--md);
     display: flex;
     line-height: var(--lg);
+    text-shadow: 0px 0px 3px black;
   }
 
   .bio-detail {
     font-size: var(--lg);
+  }
+
+  .card-container {
+    gap: var(--md);
+  }
+
+  .card {
+    width: 60vw;
+  }
+
+  .align-left {
+    align-self: flex-start;
+  }
+
+  .align-center {
+    align-self: center;
+  }
+
+  .card-narrow {
+    width: 50vw;
   }
 }
 
@@ -700,7 +835,6 @@ hr.rounded {
   }
 
   .page-header {
-    font-size: var(--xxxl);
     max-width: 70vw;
   }
 
@@ -713,32 +847,55 @@ hr.rounded {
   }
 
   .large-image {
-    width: 25vw;
+    width: 23vw;
   }
 
   .large-show {
     display: flex;
   }
 
-  .bottom-left {
+  .top-left {
+    top: 17vh;
+    left: 7vw;
   }
 
-  .top-left {
-    top: 13vh;
-    left: 8vw;
+  .bottom-left {
+    bottom: 0vh;
+    left: 4vw;
+  }
+
+  .inner-container {
+    max-width: 60vw;
   }
 
   .text-section {
     padding-top: var(--xxl);
-    width: 50vw;
+    width: 45vw;
   }
 
   .collapsing-stack {
     width: 75vw;
   }
 
+  .detail-stack {
+    flex-direction: row;
+  }
+
+  .spacer {
+    display: flex;
+    padding: 0 var(--sm);
+  }
+
   hr.rounded {
     width: 85vw;
+  }
+
+  .card-container {
+    gap: var(--lg);
+  }
+
+  .card {
+    width: 46vw;
   }
 }
 
@@ -746,18 +903,19 @@ hr.rounded {
 
 @media (min-width: 1300px) {
   .contents {
-    max-width: 85vw;
+    max-width: 90vw;
   }
 
   .text-section {
-    max-width: 80vw;
     padding-top: var(--xxxl);
-    width: 40vw;
+    width: 45vw;
+    font-size: var(--xl);
+    line-height: var(--xxl);
   }
 
   .top-left {
-    top: 15vh;
-    left: 8vw;
+    top: 21vh;
+    left: 12vw;
   }
 
   .small-image {
@@ -768,7 +926,7 @@ hr.rounded {
   }
 
   .large-image {
-    width: 20vw;
+    width: 18vw;
   }
 
   .xl-show {
@@ -776,8 +934,6 @@ hr.rounded {
   }
 
   .bio-text {
-    font-size: var(--lg);
-    line-height: var(--xl);
     width: 50vw;
   }
 
@@ -786,7 +942,8 @@ hr.rounded {
   }
 
   .page-header {
-    font-size: var(--xxxl);
+    font-size: 6vh;
+    line-height: 6vh;
   }
 
   .bio-header {
@@ -795,5 +952,34 @@ hr.rounded {
 
   .bio-detail {
     font-size: var(--lg);
+  }
+
+  .card-container {
+    gap: var(--xxl);
+  }
+
+  .card {
+    width: 40vw;
+  }
+
+  .flower-section {
+    width: 250px;
+  }
+}
+
+/* ---------------------------------- 1500px ------------------------------- */
+@media (min-width: 1500px) {
+  .contents {
+    max-width: 85vw;
+  }
+
+  .top-left {
+    top: 18vh;
+    left: 12vw;
+  }
+
+  .bio-text {
+    font-size: var(--lg);
+    line-height: var(--xxl);
   }
 }
