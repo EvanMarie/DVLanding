@@ -142,9 +142,9 @@
   /* Sizes */
   --xxs: 0.5vh;
   --xs: 1vh;
-  --sm: 1.5vh;
+  --sm: 1.75vh;
   --md: 2vh;
-  --lg: 2.5vh;
+  --lg: 2.3vh;
   --xl: 3vh;
   --xxl: 3.5vh;
   --xxxl: 4vh;
@@ -246,7 +246,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 a {
@@ -262,6 +261,7 @@ a:hover {
 
 header {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -270,7 +270,7 @@ header {
 nav,
 footer {
   position: fixed;
-  height: 12vh;
+  height: 9vh;
   top: 0;
   left: 0;
   width: 100vw;
@@ -286,8 +286,17 @@ footer {
 footer {
   bottom: 0;
   top: auto;
-  height: 6vh;
-  align-items: space-between;
+  height: 4vh;
+  align-items: center;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sm);
+  margin: 0px;
 }
 
 .logo {
@@ -303,7 +312,8 @@ footer {
 
 .title {
   font-family: "Annie Use Your Telescope", cursive;
-  font-size: 5vh;
+  font-size: 4.77vh;
+  line-height: 4vh;
   font-weight: 600;
   color: transparent;
   background: linear-gradient(
@@ -335,31 +345,35 @@ ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: var(--xs);
 }
 
 nav li,
 footer li {
   line-height: var(--lg);
   display: inline-block;
-  font-size: var(--lg);
   font-weight: 500;
   text-shadow: var(--DVTextShadow);
 }
 
-footer li {
-  font-size: 1rem;
+footer {
+  font-size: var(--xs);
+  line-height: var(--xs);
 }
 
 nav a.active,
 nav .title.active {
   color: var(--cyan);
   text-shadow: var(--BigTextShadow);
-  font-size: var(--xxl);
   transition: all 0.3s ease-in-out;
 }
 
-nav .title.active {
-  font-size: 5.5vh;
+nav a.active {
+  font-size: var(--lg);
+}
+
+.title {
+  font-size: 5vh;
 }
 
 .page {
@@ -369,7 +383,7 @@ nav .title.active {
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding-top: 13vh;
+  padding-top: 10vh;
   padding-bottom: 7vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -378,7 +392,7 @@ nav .title.active {
 
 .contents {
   width: 95vw;
-  height: 92vh;
+  height: 615px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -432,7 +446,15 @@ nav .title.active {
 }
 
 .large-image {
-  width: 35vw;
+  width: 30vw;
+}
+
+.always-show {
+  display: flex;
+}
+
+.small-show {
+  display: none;
 }
 
 .medium-show {
@@ -532,6 +554,15 @@ nav .title.active {
   gap: 0.5vw;
 }
 
+.Stack {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25vh;
+}
+
 .VStack {
   display: flex;
   height: 100%;
@@ -541,10 +572,12 @@ nav .title.active {
   gap: 0.25vh;
 }
 
+.team-main-stack {
+  justify-content: space-evenly;
+}
+
 .team-text {
   padding-top: var(--sm);
-  font-size: var(--lg);
-  line-height: var(--xl);
 }
 
 .team-image {
@@ -656,6 +689,46 @@ hr.rounded {
 /* ------------------------------- 600px  ----------------------------- */
 
 @media (min-width: 600px) {
+  .page {
+    height: 100vh;
+  }
+  .contents {
+    height: 100%;
+  }
+
+  ul {
+    margin-top: var(--sm);
+  }
+
+  .small-show {
+    display: flex;
+  }
+
+  .page {
+    padding-top: 13vh;
+  }
+
+  nav {
+    height: 12vh;
+  }
+
+  nav li {
+    font-size: var(--lg);
+  }
+
+  nav a.active {
+    font-size: var(--xxl);
+  }
+
+  footer {
+    font-size: var(--md);
+    height: 6vh;
+  }
+
+  .contents {
+    height: 100%;
+  }
+
   .large-image {
     width: 23vw;
   }
@@ -680,6 +753,12 @@ hr.rounded {
 
   .icon {
     height: 2.3vh;
+  }
+
+  .team-text {
+    width: 75vw;
+    font-size: var(--lg);
+    line-height: var(--xxl);
   }
 
   .bio-header {
@@ -749,7 +828,7 @@ hr.rounded {
   }
 
   ul {
-    width: 50vw;
+    width: 60vw;
   }
 
   footer {
@@ -821,13 +900,6 @@ hr.rounded {
     width: auto;
   }
 
-  .bio-text {
-    margin-top: var(--md);
-    display: flex;
-    line-height: var(--lg);
-    text-shadow: 0px 0px 3px black;
-  }
-
   .bio-detail {
     font-size: var(--lg);
   }
@@ -892,7 +964,7 @@ hr.rounded {
 
   .text-section {
     padding-top: var(--xxl);
-    width: 45vw;
+    width: 40vw;
   }
 
   .collapsing-stack {
@@ -906,6 +978,25 @@ hr.rounded {
   .spacer {
     display: flex;
     padding: 0 var(--sm);
+  }
+
+  .team-image {
+    height: 31vh;
+    width: auto;
+  }
+
+  .team-text {
+    font-size: var(--md);
+    line-height: var(--lg);
+    width: 75vw;
+  }
+
+  .bio-text {
+    margin-top: var(--md);
+    width: 36vw;
+    display: flex;
+    line-height: var(--lg);
+    text-shadow: 0px 0px 3px black;
   }
 
   hr.rounded {
@@ -955,8 +1046,10 @@ hr.rounded {
     display: flex;
   }
 
-  .bio-text {
-    width: 50vw;
+  .team-text {
+    align-self: flex-start;
+    width: 70vw;
+    font-size: 2.3vh;
   }
 
   hr.rounded {
@@ -968,12 +1061,8 @@ hr.rounded {
     line-height: 6vh;
   }
 
-  .bio-header {
-    font-size: var(--xxl);
-  }
-
-  .bio-detail {
-    font-size: var(--lg);
+  .team-image {
+    height: 27 vh;
   }
 
   .card-container {
@@ -995,13 +1084,47 @@ hr.rounded {
     max-width: 85vw;
   }
 
-  .top-left {
-    top: 18vh;
-    left: 12vw;
+  .Stack {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.25vh;
+    width: 30vw;
+  }
+
+  .bio-stack {
+    align-items: flex-start;
+    gap: 0.25vh;
+    width: 60%;
+    height: fit-content;
+  }
+
+  .bio-header {
+    font-size: var(--xxl);
+  }
+
+  .bio-detail {
+    font-size: var(--lg);
+  }
+
+  .team-image {
+    height: 40vh;
+  }
+
+  .team-text {
+    align-self: center;
+    width: 45vw;
+    font-size: var(--lg);
+    line-height: var(--xxl);
   }
 
   .bio-text {
-    font-size: var(--lg);
-    line-height: var(--xxl);
+    margin-top: var(--md);
+    width: 100%;
+  }
+
+  .top-left {
+    top: 18vh;
+    left: 12vw;
   }
 }
