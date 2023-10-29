@@ -306,6 +306,7 @@ footer ul {
 }
 
 .tiny-violet {
+  height:auto;
   width: 2.5vh;
   position: absolute;
   transform: rotate(90deg);
