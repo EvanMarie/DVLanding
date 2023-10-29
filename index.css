@@ -586,7 +586,7 @@ nav a.active {
 }
 
 .team-image {
-  height: 23vh;
+  height: 21vh;
   border-radius: var(--xxs);
   box-shadow: var(--DVShadow);
   margin: 0 var(--md);
@@ -766,6 +766,10 @@ hr.rounded {
     height: 2.3vh;
   }
 
+  .team-image {
+    height: 25vh;
+  }
+
   .team-text {
     width: 75vw;
     font-size: var(--lg);
@@ -795,10 +799,11 @@ hr.rounded {
 
   .card-narrow {
     width: 60vw;
+    align-self: flex-end;
   }
 
-  .card-narrow {
-    align-self: flex-end;
+  .card-narrow-base {
+    width: 55vw;
   }
 
   .flower-box {
@@ -928,6 +933,10 @@ hr.rounded {
   }
 
   .card-narrow {
+    width: 50vw;
+  }
+
+  .card-narrow-base {
     width: 50vw;
   }
 }
