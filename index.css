@@ -432,11 +432,6 @@ nav a.active {
   left: 8vw;
 }
 
-.mid-low-left {
-  bottom: 15%;
-  left: 10%;
-}
-
 .top-center {
   top: 4vh;
   left: 50%;
@@ -445,6 +440,18 @@ nav a.active {
 .bottom-center {
   bottom: 0px;
   left: 40%;
+}
+
+.mid-low-left {
+  bottom: 13%;
+  left: 8%;
+}
+
+.speech-bubble {
+  position: absolute;
+  width: 60vw;
+  bottom: 11vh;
+  right: 25vw;
 }
 
 .xs-image {
@@ -483,7 +490,7 @@ nav a.active {
   display: none;
 }
 
-.medium-show {
+.xxl-show {
   display: none;
 }
 
@@ -712,6 +719,16 @@ hr.rounded {
   align-self: center;
 }
 
+.gif-container {
+  height: 23vh;
+  width: auto;
+  position: absolute;
+  bottom: 10vh;
+  right: 8vw;
+  box-shadow: var(--StandoutShadow);
+  border-radius: var(--xxs);
+}
+
 /* ------------------------------- 600px  ----------------------------- */
 
 @media (min-width: 600px) {
@@ -834,6 +851,21 @@ hr.rounded {
   }
   .align-left {
     align-self: flex-start;
+  }
+
+  .mid-low-left {
+    bottom: 16%;
+    left: 6%;
+  }
+
+  .speech-bubble {
+    width: 50vw;
+  }
+
+  .gif-container {
+    height: 30vh;
+    bottom: 10vh;
+    right: 8vw;
   }
 }
 
@@ -958,6 +990,23 @@ hr.rounded {
   .card-narrow-base {
     width: 50vw;
   }
+
+  .mid-low-left {
+    bottom: 33%;
+    left: 3%;
+  }
+
+  .speech-bubble {
+    position: absolute;
+    width: 40vw;
+    bottom: 18vh;
+    right: 35vw;
+  }
+  .gif-container {
+    height: 33vh;
+    bottom: 13vh;
+    right: 10vw;
+  }
 }
 
 /* ---------------------------------- 1024px ------------------------------- */
@@ -1055,6 +1104,24 @@ hr.rounded {
     align-self: flex-end;
     justify-self: flex-end;
   }
+
+  .mid-low-left {
+    bottom: 13%;
+    left: 8%;
+  }
+
+  .speech-bubble {
+    position: absolute;
+    width: 33vw;
+    bottom: 16vh;
+    right: 25vw;
+  }
+
+  .gif-container {
+    height: 33vh;
+    bottom: 10vh;
+    right: 13vw;
+  }
 }
 
 /* ---------------------------------- 1300px ------------------------------- */
@@ -1130,6 +1197,23 @@ hr.rounded {
   .flower-section {
     width: 250px;
   }
+
+  .mid-low-left {
+    bottom: 23%;
+    left: 8%;
+  }
+
+  .speech-bubble {
+    position: absolute;
+    width: 30vw;
+    bottom: 11vh;
+    right: 25vw;
+  }
+
+  .gif-container {
+    bottom: 10vh;
+    right: 19vw;
+  }
 }
 
 /* ---------------------------------- 1500px ------------------------------- */
@@ -1180,5 +1264,25 @@ hr.rounded {
   .top-left {
     top: 18vh;
     left: 12vw;
+  }
+
+  .xxl-show {
+    display: flex;
+  }
+  .mid-low-left {
+    bottom: 23%;
+    left: 8%;
+  }
+
+  .speech-bubble {
+    position: absolute;
+    width: 25vw;
+    bottom: 13vh;
+    right: 25vw;
+  }
+  .gif-container {
+    height: 38vh;
+    bottom: 9vh;
+    right: 23vw;
   }
 }
