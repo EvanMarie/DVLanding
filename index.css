@@ -228,10 +228,11 @@ html {
   font-size: var(--md);
   background-color: var(--dark-gray);
   overflow-x: hidden;
-  overflow-y: scroll;
+  /* overflow-y: scroll;
   scroll-behavior: "smooth";
   scrollbar-width: "thin";
-  scrollbar-color: "purple";
+  scrollbar-color: "purple"; */
+  overflow-y: hidden;
 }
 
 body {
@@ -376,6 +377,10 @@ nav a.active {
   font-size: 5vh;
 }
 
+.pages-container {
+  height: fit-content;
+  /* overflow-y: hidden; */
+}
 .page {
   width: 100vw;
   height: 100vh;
@@ -387,7 +392,7 @@ nav a.active {
   padding-bottom: 7vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .contents {
@@ -646,7 +651,7 @@ hr.rounded {
 }
 
 .card-container {
-  width: 100%;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: var(--xs);
@@ -659,6 +664,12 @@ hr.rounded {
   box-shadow: var(--DVShadow);
   background: var(--dark-gray-grad);
   padding: var(--xs);
+}
+
+.card-narrow-base {
+  width: 63vw;
+  align-self: flex-end;
+  justify-self: flex-end;
 }
 
 .card-heading {
