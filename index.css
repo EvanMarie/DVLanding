@@ -228,6 +228,7 @@ html {
   font-size: var(--md);
   background-color: var(--dark-gray);
   overflow-x: hidden;
+  scroll-behavior: smooth;
   /* overflow-y: scroll;
   scroll-behavior: "smooth";
   scrollbar-width: "thin";

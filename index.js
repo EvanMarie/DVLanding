@@ -44,7 +44,35 @@ setViewportHeight();
 // Update the height when the window is resized
 window.addEventListener("resize", setViewportHeight);
 
-// Your existing script below
+function nearingBottom() {
+  return (
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 100
+  );
+}
+
+// Call the function initially
+setViewportHeight();
+
+// Update the height when the window is resized
+window.addEventListener("resize", setViewportHeight);
+
+// Scroll prevention logic
+let lastScrollTop = 0;
+
+window.addEventListener(
+  "scroll",
+  function () {
+    if (nearingBottom()) {
+      if (window.scrollY > lastScrollTop) {
+        // Scrolling down, so prevent it
+        window.scrollTo(0, lastScrollTop);
+      }
+    }
+    lastScrollTop = window.scrollY;
+  },
+  false
+);
+
 document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll("nav li a");
   const titleLink = document.querySelector('a[href="#home"] .title');
