@@ -308,7 +308,7 @@
     gap: var(--sm);
   }
 
-  .social-icon {
+  .fa-brands {
     cursor: pointer;
     height: 2vh;
     width: auto;
@@ -380,8 +380,7 @@
     margin-top: var(--xs);
   }
 
-  nav li,
-  footer li {
+  nav li {
     line-height: var(--lg);
     display: inline-block;
     font-weight: 500;
