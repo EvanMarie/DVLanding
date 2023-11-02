@@ -144,7 +144,9 @@
   --xs: 1vh;
   --sm: 1.75vh;
   --md: 2vh;
+  --mdlg: 2.15vh;
   --lg: 2.3vh;
+  --lger: 2.5vh;
   --xl: 3vh;
   --xxl: 3.5vh;
   --xxxl: 4vh;
@@ -218,516 +220,548 @@
 
 /* -------------------------------  CSS DEFAULTS ----------------------------- */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@media (min-width: 0px) {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-html {
-  font-size: var(--md);
-  background-color: var(--dark-gray);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  /* overflow-y: scroll;
+  html {
+    font-size: var(--md);
+    background-color: var(--dark-gray);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* overflow-y: scroll;
   scroll-behavior: "smooth";
   scrollbar-width: "thin";
   scrollbar-color: "purple"; */
-  overflow-y: hidden;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Barlow", sans-serif;
-  font-weight: 400;
-  color: var(--light-blue);
-  background-color: var(--dark-gray);
-  background-image: url("./resources/violetBackground.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: var(--lilac);
-}
-
-a:hover {
-  color: var(--pinkest);
-  text-shadow: 0px 0px 3px black;
-  transition: all 0.3s ease-in-out;
-}
-
-header {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-nav,
-footer {
-  position: fixed;
-  height: 9vh;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--slate-75);
-  z-index: 100;
-  box-shadow: var(--Shadow3D);
-}
-
-footer {
-  bottom: 0;
-  top: auto;
-  height: 4vh;
-  align-items: center;
-}
-
-footer ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: var(--sm);
-  margin: 0px;
-}
-
-.logo {
-  position: relative;
-  padding: var(--xxs);
-}
-
-.tiny-violet {
-  height: auto;
-  width: 2.5vh;
-  position: absolute;
-  transform: rotate(90deg);
-}
-
-.title {
-  font-family: "Annie Use Your Telescope", cursive;
-  font-size: 4.77vh;
-  line-height: 4vh;
-  font-weight: 600;
-  color: transparent;
-  background: linear-gradient(
-    45deg,
-    var(--cyan),
-    var(--medium-blue),
-    var(--pinkest)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-.title:hover {
-  /* Bright gradient colors on hover */
-  background: linear-gradient(
-    45deg,
-    var(--cyan),
-    var(--medium-blue),
-    var(--pinkest)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* Lightened text-shadow on hover */
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-}
-
-ul {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: var(--xs);
-}
-
-nav li,
-footer li {
-  line-height: var(--lg);
-  display: inline-block;
-  font-weight: 500;
-  text-shadow: var(--DVTextShadow);
-}
-
-footer {
-  font-size: var(--xs);
-  line-height: var(--xs);
-}
-
-nav a.active,
-nav .title.active {
-  color: var(--cyan);
-  text-shadow: var(--BigTextShadow);
-  transition: all 0.3s ease-in-out;
-}
-
-nav a.active {
-  font-size: var(--lg);
-}
-
-.title {
-  font-size: 5vh;
-}
-
-.pages-container {
-  height: fit-content;
-  /* overflow-y: hidden; */
-}
-.page {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  padding-top: 10vh;
-  padding-bottom: 7vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  overflow: hidden;
-}
-
-.contents {
-  width: 97vw;
-  height: 615px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  border-radius: var(--xxs);
-  position: relative;
-  box-shadow: var(--DVShadow);
-}
-
-.image {
-  position: absolute;
-}
-
-.bottom-right {
-  bottom: 0vh;
-  right: 3vw;
-}
-
-.bottom-left {
-  bottom: 0vh;
-  left: 1vw;
-}
-
-.top-right {
-  top: 3vh;
-  right: 2vw;
-}
-
-.top-left {
-  top: 15vh;
-  left: 8vw;
-}
-
-.top-center {
-  top: 4vh;
-  left: 50%;
-}
-
-.bottom-center {
-  bottom: 0px;
-  left: 40%;
-}
-
-.mid-low-left {
-  bottom: 13%;
-  left: 8%;
-}
-
-.speech-bubble {
-  position: absolute;
-  width: 60vw;
-  bottom: 11vh;
-  right: 25vw;
-}
-
-.xs-image {
-  width: 10vw;
-}
-
-.small-image {
-  width: 16vw;
-}
-
-.medium-image {
-  width: 33vw;
-}
-
-.large-image {
-  width: 30vw;
-}
-
-.always-show {
-  display: flex;
-}
-
-.small-show {
-  display: none;
-}
-
-.medium-show {
-  display: none;
-}
-
-.large-show {
-  display: none;
-}
-
-.xl-show {
-  display: none;
-}
-
-.xxl-show {
-  display: none;
-}
-
-.inner-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: var(--sm);
-}
-
-.page-header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 4.5vh;
-  line-height: 4.5vh;
-  align-self: flex-start;
-  justify-self: flex-start;
-  font-weight: 500;
-  color: var(--cyan);
-  font-family: "Annie Use Your Telescope", cursive;
-  text-shadow: 0px 5px 4px #000000;
-}
-
-.top-pad-header {
-  margin-top: var(--xs);
-  margin-bottom: var(--xs);
-}
-
-.text-section {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-top: var(--sm);
-  font-size: var(--md);
-  line-height: var(--lg);
-}
-
-.flower-box {
-  width: 100%;
-  display: flex;
-  direction: row;
-  justify-content: center;
-}
-
-.flower-section {
-  width: 150px;
-  margin-top: var(--md);
-}
-
-.collapsing-stack {
-  display: flex;
-  width: 90vw;
-  flex-direction: row;
-  margin: var(--xl) 0;
-  align-items: flex-start;
-}
-
-.bio-header {
-  color: var(--gold);
-  text-shadow: 1px 1px 3px black;
-}
-
-.detail-stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.spacer {
-  display: none;
-}
-
-.HStack {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 0.5vw;
-}
-
-.Stack {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.25vh;
-}
-
-.VStack {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.25vh;
-}
-
-.team-main-stack {
-  justify-content: space-evenly;
-}
-
-.team-text {
-  padding-top: var(--sm);
-}
-
-.team-image {
-  height: 21vh;
-  border-radius: var(--xxs);
-  box-shadow: var(--DVShadow);
-  margin: 0 var(--md);
-  width: auto;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.team-image:hover {
-  transform: scale(1.04);
-  box-shadow: var(--Shadow3D);
-  transition: all 0.3s ease-in-out;
-}
-
-.bio-text {
-  display: none;
-}
-
-.bio-detail {
-  display: flex;
-  flex-direction: column;
-  font-size: var(--sm);
-  line-height: var(--xs);
-  color: var(--medium-blue);
-  text-shadow: var(--DVTextShadow);
-  margin-top: var(--xs);
-}
-
-.learn-more {
-  font-size: var(--md);
-  font-weight: 500;
-  width: auto;
-  height: 3vh;
-  line-height: var(--md);
-  padding: var(--xs);
-  background: var(--dark-gray);
-  border-radius: var(--xxs);
-  margin-top: var(--xs);
-  box-shadow: var(--DVShadow);
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-}
-
-.learn-more:hover {
-  background: var(--slate);
-  color: var(--cyan);
-  transition: all 0.3s ease-in-out;
-}
-
-.icon {
-  height: 2vh;
-  margin-left: var(--xs);
-}
-
-hr.rounded {
-  border-top: 1px solid var(--cyan-90);
-  border-radius: 5px;
-  width: 90vw;
-}
-
-.card-container {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  margin-top: var(--xs);
-  gap: var(--xs);
-}
-
-.card {
-  width: 90vw;
-  border-radius: var(--xxs);
-  box-shadow: var(--DVShadow);
-  background: var(--dark-gray-grad);
-  padding: var(--xs);
-}
-
-.card-narrow-base {
-  width: 63vw;
-  align-self: flex-end;
-  justify-self: flex-end;
-}
-
-.card-heading {
-  color: var(--gold);
-  font-size: var(--md);
-  margin-bottom: var(--xxs);
-  text-shadow: 2px 2px 13px var(--purple);
-}
-
-.card-text {
-  font-size: var(--sm);
-  line-height: var(--md);
-  color: var(--medium-blue);
-}
-
-.align-left {
-  align-self: center;
-}
-
-.align-center {
-  align-self: center;
-}
-
-.align-right {
-  align-self: center;
-}
-
-.gif-container {
-  height: 23vh;
-  width: auto;
-  position: absolute;
-  bottom: 10vh;
-  right: 8vw;
-  box-shadow: var(--StandoutShadow);
-  border-radius: var(--xxs);
+    overflow-y: hidden;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    color: var(--light-blue);
+    background-color: var(--dark-gray);
+    background-image: url("./resources/violetBackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--lilac);
+  }
+
+  a:hover {
+    color: var(--pinkest);
+    text-shadow: 0px 0px 3px black;
+    transition: all 0.3s ease-in-out;
+  }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav,
+  footer {
+    position: fixed;
+    height: 9vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--slate-75);
+    z-index: 100;
+    box-shadow: var(--Shadow3D);
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: space-around;
+    bottom: 0;
+    top: auto;
+    height: 6vh;
+    gap: var(--xs);
+    align-items: center;
+    padding: 5px var(--md);
+  }
+
+  .social-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    gap: var(--sm);
+  }
+
+  .social-icon {
+    cursor: pointer;
+    height: 2vh;
+    width: auto;
+    font-size: var(--xl);
+    color: var(--pinkest);
+  }
+
+  .fa-brands:hover {
+    color: var(--cyan);
+    transition: all 0.3s ease-in-out;
+  }
+
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sm);
+    margin: 0px;
+  }
+
+  .logo {
+    position: relative;
+    padding: var(--xxs);
+  }
+
+  .tiny-violet {
+    height: auto;
+    width: 2.5vh;
+    position: absolute;
+    transform: rotate(90deg);
+  }
+
+  .title {
+    font-family: "Annie Use Your Telescope", cursive;
+    font-size: 4.77vh;
+    line-height: 4vh;
+    font-weight: 600;
+    color: transparent;
+    background: linear-gradient(
+      45deg,
+      var(--cyan),
+      var(--medium-blue),
+      var(--pinkest)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .title:hover {
+    /* Bright gradient colors on hover */
+    background: linear-gradient(
+      45deg,
+      var(--cyan),
+      var(--medium-blue),
+      var(--pinkest)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Lightened text-shadow on hover */
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: var(--xs);
+  }
+
+  nav li,
+  footer li {
+    line-height: var(--lg);
+    display: inline-block;
+    font-weight: 500;
+    text-shadow: var(--DVTextShadow);
+  }
+
+  footer {
+    font-size: var(--xs);
+    line-height: var(--xs);
+  }
+
+  nav a.active,
+  nav .title.active {
+    color: var(--cyan);
+    text-shadow: var(--BigTextShadow);
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav a.active {
+    font-size: var(--lg);
+  }
+
+  .title {
+    font-size: 5vh;
+  }
+
+  .pages-container {
+    height: fit-content;
+    /* overflow-y: hidden; */
+  }
+  .page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 10vh;
+    padding-bottom: 7vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    overflow: hidden;
+  }
+
+  .contents {
+    width: 97vw;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: var(--xxs);
+    position: relative;
+    box-shadow: var(--DVShadow);
+  }
+
+  .image {
+    position: absolute;
+  }
+
+  .bottom-right {
+    bottom: 0vh;
+    right: 3vw;
+  }
+
+  .bottom-left {
+    bottom: 0vh;
+    left: 1vw;
+  }
+
+  .top-right {
+    top: 3vh;
+    right: 2vw;
+  }
+
+  .top-left {
+    top: 15vh;
+    left: 8vw;
+  }
+
+  .top-center {
+    top: 4vh;
+    left: 50%;
+  }
+
+  .bottom-center {
+    bottom: 0px;
+    left: 40%;
+  }
+
+  .mid-low-left {
+    bottom: 13%;
+    left: 8%;
+  }
+
+  .speech-bubble {
+    position: absolute;
+    width: 60vw;
+    bottom: 11vh;
+    right: 25vw;
+  }
+
+  .xs-image {
+    width: 10vw;
+  }
+
+  .small-image {
+    width: 16vw;
+  }
+
+  .medium-image {
+    width: 33vw;
+  }
+
+  .large-image {
+    width: 27vw;
+  }
+
+  .always-show {
+    display: flex;
+  }
+
+  .small-show {
+    display: none;
+  }
+
+  .medium-show {
+    display: none;
+  }
+
+  .large-show {
+    display: none;
+  }
+
+  .xl-show {
+    display: none;
+  }
+
+  .xxl-show {
+    display: none;
+  }
+
+  .inner-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: var(--sm);
+  }
+
+  .page-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.5vh;
+    line-height: 4.5vh;
+    align-self: flex-start;
+    justify-self: flex-start;
+    font-weight: 500;
+    color: var(--cyan);
+    font-family: "Annie Use Your Telescope", cursive;
+    text-shadow: 0px 5px 4px #000000;
+  }
+
+  .top-pad-header {
+    margin-top: var(--xs);
+    margin-bottom: var(--xs);
+  }
+
+  .text-section {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: var(--sm);
+    font-size: var(--md);
+    line-height: var(--lg);
+  }
+
+  .flower-box {
+    width: 100%;
+    display: flex;
+    direction: row;
+    justify-content: center;
+  }
+
+  .flower-section {
+    width: 150px;
+    margin-top: var(--md);
+  }
+
+  .collapsing-stack {
+    display: flex;
+    width: 90vw;
+    flex-direction: row;
+    margin: var(--xl) 0;
+    align-items: flex-start;
+  }
+
+  .bio-header {
+    color: var(--gold);
+    text-shadow: 1px 1px 3px black;
+  }
+
+  .detail-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .HStack {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.5vw;
+  }
+
+  .Stack {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.25vh;
+  }
+
+  .VStack {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.25vh;
+  }
+
+  .team-main-stack {
+    justify-content: space-evenly;
+  }
+
+  .team-text {
+    padding-top: var(--sm);
+  }
+
+  .team-image {
+    height: 21vh;
+    border-radius: var(--xxs);
+    box-shadow: var(--DVShadow);
+    margin: 0 var(--md);
+    width: auto;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .team-image:hover {
+    transform: scale(1.04);
+    box-shadow: var(--Shadow3D);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .bio-text {
+    display: none;
+  }
+
+  .bio-detail {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--sm);
+    line-height: var(--xs);
+    color: var(--medium-blue);
+    text-shadow: var(--DVTextShadow);
+    margin-top: var(--xs);
+  }
+
+  .learn-more {
+    font-size: var(--md);
+    font-weight: 500;
+    width: auto;
+    height: 3vh;
+    line-height: var(--md);
+    padding: var(--xs);
+    background: var(--dark-gray);
+    border-radius: var(--xxs);
+    margin-top: var(--xs);
+    box-shadow: var(--DVShadow);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .learn-more:hover {
+    background: var(--slate);
+    color: var(--cyan);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .icon {
+    height: 2vh;
+    margin-left: var(--xs);
+  }
+
+  hr.rounded {
+    border-top: 1px solid var(--cyan-90);
+    border-radius: 5px;
+    width: 90vw;
+  }
+
+  .card-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--xs);
+    gap: var(--xs);
+  }
+
+  .card {
+    width: 90vw;
+    border-radius: var(--xxs);
+    box-shadow: var(--DVShadow);
+    background: var(--dark-gray-grad);
+    padding: var(--xs);
+  }
+
+  .card-narrow-base {
+    width: 63vw;
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+
+  .card-heading {
+    color: var(--gold);
+    font-size: var(--md);
+    margin-bottom: var(--xxs);
+    text-shadow: 2px 2px 13px var(--purple);
+  }
+
+  .card-text {
+    font-size: var(--sm);
+    line-height: var(--md);
+    color: var(--medium-blue);
+  }
+
+  .align-left {
+    align-self: center;
+  }
+
+  .align-center {
+    align-self: center;
+  }
+
+  .align-right {
+    align-self: center;
+  }
+
+  .gif-container {
+    height: 23vh;
+    width: auto;
+    position: absolute;
+    bottom: 6vh;
+    right: 8vw;
+    box-shadow: var(--StandoutShadow);
+    border-radius: var(--xxs);
+  }
+
+  .why-text {
+    width: 90vw;
+  }
 }
 
 /* ------------------------------- 600px  ----------------------------- */
@@ -749,7 +783,7 @@ hr.rounded {
   }
 
   .page {
-    padding-top: 13vh;
+    padding-top: 12vh;
   }
 
   nav {
@@ -765,8 +799,7 @@ hr.rounded {
   }
 
   footer {
-    font-size: var(--md);
-    height: 6vh;
+    font-size: var(--xs);
   }
 
   .contents {
@@ -782,7 +815,7 @@ hr.rounded {
   }
 
   .text-section {
-    font-size: var(--lg);
+    font-size: var(--mdlg);
     line-height: var(--xl);
     padding-top: var(--lg);
   }
@@ -882,6 +915,10 @@ hr.rounded {
     flex-direction: row;
   }
 
+  .social-container {
+    width: 60%;
+  }
+
   nav {
     justify-content: space-around;
     height: 8vh;
@@ -900,11 +937,12 @@ hr.rounded {
   }
 
   footer {
-    height: 4vh;
+    height: 5vh;
+    font-size: var(--sm);
   }
 
   .page {
-    padding-top: 9.5vh;
+    padding-top: 9vh;
     padding-bottom: 4vh;
   }
 
@@ -1005,7 +1043,7 @@ hr.rounded {
   }
   .gif-container {
     height: 33vh;
-    bottom: 13vh;
+    bottom: 10vh;
     right: 10vw;
   }
 }
@@ -1052,7 +1090,7 @@ hr.rounded {
   }
 
   .text-section {
-    padding-top: var(--xxl);
+    padding-top: var(--xl);
     width: 40vw;
   }
 
@@ -1120,8 +1158,12 @@ hr.rounded {
 
   .gif-container {
     height: 33vh;
-    bottom: 10vh;
+    bottom: 8vh;
     right: 13vw;
+  }
+
+  .social-container {
+    width: 50%;
   }
 }
 
@@ -1133,10 +1175,10 @@ hr.rounded {
   }
 
   .text-section {
-    padding-top: var(--xxxl);
+    padding-top: var(--xxl);
     width: 45vw;
-    font-size: var(--xl);
-    line-height: var(--xxl);
+    font-size: var(--lger);
+    line-height: var(--xl);
   }
 
   .top-left {
@@ -1214,6 +1256,10 @@ hr.rounded {
   .gif-container {
     bottom: 10vh;
     right: 19vw;
+  }
+
+  .social-container {
+    width: 40%;
   }
 }
 
